@@ -50,6 +50,7 @@ vim.keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', { no
 vim.keymap.set('n', '<leader>cd', function() vim.diagnostic.open_float() end, { noremap = true, silent = true })
 
 vim.keymap.set('n', '<leader>gd', ':lua require("gitsigns").preview_hunk()<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>gz', ':lua require("gitsigns").reset_hunk()<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>m', ':lua vim.lsp.buf.format()<CR>', { noremap = true, silent = true })
 
 vim.keymap.set("n", "<space>fb", function()
@@ -124,4 +125,14 @@ vim.keymap.set('n', '<leader>pc', paste_without_comments,
     { noremap = true, silent = true, desc = 'Paste without comments' })
 
 vim.keymap.set('n', '<leader>G', ':ClangdSwitchSourceHeader<CR>',
-    { noremap = true, silent = true, desc = 'Paste without comments' })
+    { noremap = true, silent = true, desc = 'Switch between header and source files' })
+
+vim.keymap.set('n', '<leader>gg', ':Neogit<CR>')
+
+vim.keymap.set('n', '<leader>dx', ':DiffviewClose<CR>', { noremap = true, silent = true })
+
+vim.o.title = true
+vim.o.titlelen = 0
+vim.o.titlestring = "nvim - " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+
+vim.o.statusline = "%f %m %= %p%% [%{fnamemodify(getcwd(), ':t')}]"
