@@ -50,6 +50,8 @@ vim.keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', { no
 vim.keymap.set('n', '<leader>cd', function() vim.diagnostic.open_float() end, { noremap = true, silent = true })
 
 vim.keymap.set('n', '<leader>gd', ':lua require("gitsigns").preview_hunk()<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>gb', ':lua require("gitsigns").blame_line()<CR>',
+    { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>gz', ':lua require("gitsigns").reset_hunk()<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>m', ':lua vim.lsp.buf.format()<CR>', { noremap = true, silent = true })
 
@@ -135,4 +137,4 @@ vim.o.title = true
 vim.o.titlelen = 0
 vim.o.titlestring = "nvim - " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
 
-vim.o.statusline = "%f %m %= %p%% [%{fnamemodify(getcwd(), ':t')}]"
+vim.o.statusline = "%f > %{%v:lua.require'nvim-navic'.get_location()%} %m %= %p%% [%{fnamemodify(getcwd(), ':t')}]"

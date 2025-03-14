@@ -19,6 +19,10 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 local on_attach = function(client, bufnr)
+    if client.server_capabilities.documentSymbolProvider then
+        local navic = require("nvim-navic")
+        navic.attach(client, bufnr)
+    end
     if client.supports_method("textDocument/formatting") then
         local group = vim.api.nvim_create_augroup("LspFormatting", { clear = false })
 
@@ -553,5 +557,8 @@ require("lazy").setup({
                 }
             })
         end
+    },
+    {
+        'SmiteshP/nvim-navic',
     },
 })
