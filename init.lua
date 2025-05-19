@@ -12,6 +12,10 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 
 vim.opt.clipboard = "unnamedplus"
+vim.opt.encoding = "utf-8"
+vim.opt.fileencoding = "utf-8"
+vim.opt.fileencodings = { "utf-8", "cp1251", "ucs-bom", "latin1" }
+
 vim.opt.scrolloff = 999
 vim.cmd("language en_US")
 
@@ -26,6 +30,7 @@ require("config.lazy")
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
 vim.keymap.set("n", "<leader>fw", builtin.live_grep, { desc = "Telescope live grep" })
+vim.keymap.set("n", "<leader>fd", builtin.lsp_document_symbols, { desc = "Telescope lsp document symbols" })
 -- vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 -- vim.cmd.colorscheme("material")
@@ -138,3 +143,17 @@ vim.o.titlelen = 0
 vim.o.titlestring = "nvim - " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
 
 vim.o.statusline = "%f > %{%v:lua.require'nvim-navic'.get_location()%} %m %= %p%% [%{fnamemodify(getcwd(), ':t')}]"
+
+vim.api.nvim_create_autocmd("BufNewFile", {
+    pattern = "*.tex",
+    callback = function()
+        local template = vim.fn.expand("~/.config/nvim/templates/latex.tex")
+        vim.cmd("0r " .. template)
+    end
+})
+
+vim.o.timeout = true
+vim.o.timeoutlen = 60000
+
+vim.api.nvim_set_keymap('n', '<leader>ww', '<C-w>w', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<Esc>', [[<C-\><C-n>]], { noremap = true, silent = true })

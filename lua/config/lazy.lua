@@ -19,6 +19,10 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 local on_attach = function(client, bufnr)
+    if vim.bo[bufnr].filetype == "cs" then
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentRangeFormattingProvider = false
+    end
     if client.server_capabilities.documentSymbolProvider then
         local navic = require("nvim-navic")
         navic.attach(client, bufnr)
@@ -262,6 +266,11 @@ require("lazy").setup({
                 },
             })
 
+            lspconfig.csharp_ls.setup {
+                cmd = { "csharp-ls" },
+                on_attach = function(client, bufnr)
+                end,
+            }
             lspconfig.gopls.setup({})
 
             lspconfig.jdtls.setup({
@@ -560,5 +569,28 @@ require("lazy").setup({
     },
     {
         'SmiteshP/nvim-navic',
+    },
+    {
+        "lervag/vimtex",
+        ft = { "tex" },
+        init = function()
+            vim.g.vimtex_view_method = "zathura"
+            vim.g.vimtex_compiler_method = "latexmk"
+            vim.g.vimtex_compiler_latexmk = {
+                build_dir = "",
+                callback = 1,
+                continuous = 1,
+                executable = "latexmk",
+                options = {
+                    "-pdf",
+                    "-file-line-error",
+                    "-synctex=1",
+                    "-interaction=nonstopmode",
+                },
+            }
+        end,
+    },
+    {
+        'vuciv/golf'
     },
 })
