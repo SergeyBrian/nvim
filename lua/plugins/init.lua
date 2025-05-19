@@ -27,4 +27,5 @@ require("lazy").setup({
     require("plugins.vimtex"),
     require("plugins.lsp"),
     require("plugins.cmp"),
+    require("plugins.fzf"),
 })

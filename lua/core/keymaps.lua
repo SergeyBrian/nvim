@@ -1,4 +1,5 @@
 local funcs = require("utils.funcs")
+local build = require("utils.build")
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
@@ -27,3 +28,11 @@ vim.keymap.set("n", "<leader>gf", function()
     local word = vim.fn.expand("<cWORD>")
     funcs.jump_to_file_location(word)
 end, { desc = "Jump to file:line:col" })
+
+vim.keymap.set('n', '<leader>b', function()
+    build.run_build()
+end, { desc = "Build project" })
+vim.keymap.set('n', '<leader>B', function()
+    build.reset_target()
+    build.run_build()
+end, { desc = "Clean build" })
