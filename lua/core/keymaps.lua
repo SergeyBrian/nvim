@@ -16,6 +16,8 @@ vim.keymap.set("n", "<leader>m", vim.lsp.buf.format, { desc = "LSP Format", sile
 vim.keymap.set('n', '<leader>ww', '<C-w>w', { noremap = true, silent = true })
 vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>T", funcs.open_project_terminal, { desc = "Open Project Terminal" })
+vim.keymap.set('n', '<leader>G', ':ClangdSwitchSourceHeader<CR>',
+    { noremap = true, silent = true, desc = 'Switch between header and source files' })
 
 -- Better renaming
 vim.keymap.set("n", "<leader>r", funcs.refactor_rename, { noremap = true, silent = true, desc = "LSP rename" })
