@@ -24,6 +24,9 @@ vim.keymap.set("n", "<leader>J", "<cmd>cnext<CR>", { desc = "Quickfix: Next item
 vim.keymap.set("n", "<leader>K", "<cmd>cprev<CR>", { desc = "Quickfix: Previous item" })
 vim.keymap.set("n", "<leader>F", "<cmd>tabedit %<CR>", { desc = "Maximize current window" })
 
+vim.keymap.set('n', '<leader>G', ':ClangdSwitchSourceHeader<CR>',
+    { noremap = true, silent = true, desc = 'Switch between header and source files' })
+
 -- Better renaming
 vim.keymap.set("n", "<leader>r", funcs.refactor_rename, { noremap = true, silent = true, desc = "LSP rename" })
 vim.keymap.set("n", "<leader>R", funcs.rename_under_cursor,
@@ -37,9 +40,13 @@ vim.keymap.set("n", "<leader>gf", function()
 end, { desc = "Jump to file:line:col" })
 
 vim.keymap.set('n', '<leader>b', function()
-    build.run_build()
-end, { desc = "Build project" })
-vim.keymap.set('n', '<leader>B', function()
-    build.reset_target()
-    build.run_build()
-end, { desc = "Clean build" })
+    vim.diagnostic.setqflist()
+end, { desc = "Project quickfix list" })
+
+-- vim.keymap.set('n', '<leader>b', function()
+--     build.run_build()
+-- end, { desc = "Build project" })
+-- vim.keymap.set('n', '<leader>B', function()
+--     build.reset_target()
+--     build.run_build()
+-- end, { desc = "Clean build" })
