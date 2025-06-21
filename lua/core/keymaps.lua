@@ -39,9 +39,13 @@ vim.keymap.set("n", "<leader>gf", function()
     funcs.jump_to_file_location(word)
 end, { desc = "Jump to file:line:col" })
 
-vim.keymap.set('n', '<leader>b', function()
+vim.keymap.set('n', '<leader>bb', function()
     vim.diagnostic.setqflist()
 end, { desc = "Project quickfix list" })
+
+vim.keymap.set('n', '<leader>be', function()
+    vim.diagnostic.setqflist({ severity = vim.diagnostic.severity.ERROR })
+end, { desc = "Project errors quickfix list" })
 
 -- vim.keymap.set('n', '<leader>b', function()
 --     build.run_build()
