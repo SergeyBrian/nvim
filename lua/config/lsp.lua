@@ -68,6 +68,6 @@ null_ls.setup({
 })
 
 require("mason-null-ls").setup({
-    ensure_installed = { "prettier", "black", "clang-format" },
+    ensure_installed = { "clang-format" },
     automatic_installation = true,
 })
