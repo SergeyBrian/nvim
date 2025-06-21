@@ -20,6 +20,7 @@ vim.opt.fileencodings = { "utf-8", "cp1251", "ucs-bom", "latin1" }
 
 -- Centered cursor
 vim.opt.scrolloff = 999
+vim.opt.sidescrolloff = 999
 
 vim.cmd("language en_US")
 
@@ -41,3 +42,8 @@ vim.opt.statusline = "%f > %{%v:lua.require'nvim-navic'.get_location()%} %m %= %
 -- Extended timeout after leader key
 vim.opt.timeout = true
 vim.opt.timeoutlen = 60000
+
+vim.opt.compatible = false
+
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
