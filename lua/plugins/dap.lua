@@ -70,6 +70,10 @@ return {
             --   },
             -- }
 
+            vim.keymap.set("n", "<space><C-B>", function()
+                local cond = vim.fn.input("Condition: ")
+                dap.toggle_breakpoint(cond)
+            end)
             vim.keymap.set("n", "<space>B", dap.toggle_breakpoint)
             vim.keymap.set("n", "<space>gB", dap.run_to_cursor)
 

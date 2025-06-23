@@ -20,7 +20,7 @@ require("lazy").setup({
     require("plugins.telescope"),
     require("plugins.harpoon"),
     require("plugins.gitsigns"),
-    require("plugins.scrollbar"),
+    --require("plugins.scrollbar"),
     require("plugins.navic"),
     require("plugins.kanagawa"),
     require("plugins.neogit"),

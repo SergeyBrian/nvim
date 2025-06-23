@@ -47,6 +47,9 @@ vim.keymap.set('n', '<leader>be', function()
     vim.diagnostic.setqflist({ severity = vim.diagnostic.severity.ERROR })
 end, { desc = "Project errors quickfix list" })
 
+vim.keymap.set('n', '<leader><Down>', vim.diagnostic.goto_next, { noremap = true, silent = true })
+vim.keymap.set('n', '<leader><Up>', vim.diagnostic.goto_prev, { noremap = true, silent = true })
+
 -- vim.keymap.set('n', '<leader>b', function()
 --     build.run_build()
 -- end, { desc = "Build project" })
