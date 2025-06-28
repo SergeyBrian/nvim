@@ -23,6 +23,7 @@ vim.keymap.set('n', '<C-j>', '<C-w>j', { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>J", "<cmd>cnext<CR>", { desc = "Quickfix: Next item" })
 vim.keymap.set("n", "<leader>K", "<cmd>cprev<CR>", { desc = "Quickfix: Previous item" })
 vim.keymap.set("n", "<leader>F", "<cmd>tabedit %<CR>", { desc = "Maximize current window" })
+vim.keymap.set("n", "<leader>gt", vim.lsp.buf.type_definition, { desc = "Go to type of current symbol" })
 
 vim.keymap.set('n', '<leader>G', ':ClangdSwitchSourceHeader<CR>',
     { noremap = true, silent = true, desc = 'Switch between header and source files' })
