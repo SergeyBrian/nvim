@@ -7,7 +7,7 @@ return {
         configs.setup({
             ensure_installed = { "go", "toml", "yaml", "bash", "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html", "python" },
             sync_install = false,
-            highlight = { enable = true },
+            highlight = { enable = false },
             indent = { enable = true },
             incremental_selection = {
                 enable = true,

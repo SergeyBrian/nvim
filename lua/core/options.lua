@@ -22,8 +22,6 @@ vim.opt.fileencodings = { "utf-8", "cp1251", "ucs-bom", "latin1" }
 vim.opt.scrolloff = 999
 vim.opt.sidescrolloff = 999
 
-vim.cmd("language en_US")
-
 -- Allow block select be longer than text on line
 vim.opt.virtualedit = "block"
 
