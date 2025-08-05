@@ -32,7 +32,10 @@ local lspconfig = require("lspconfig")
 local servers = {
     gopls = { on_attach = on_attach },
     clangd = {
-        on_attach = on_attach,
+        on_attach = function(client, bufnr)
+            client.server_capabilities.semanticTokensProvider = nil
+            on_attach(client, bufnr)
+        end,
         init_options = {
             fallbackFlags = { "--std=c++20" },
         },
