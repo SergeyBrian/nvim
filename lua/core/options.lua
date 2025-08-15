@@ -47,3 +47,5 @@ vim.opt.compatible = false
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+
+vim.opt.signcolumn = "yes"
