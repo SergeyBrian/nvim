@@ -36,6 +36,10 @@ local servers = {
             client.server_capabilities.semanticTokensProvider = nil
             on_attach(client, bufnr)
         end,
+        cmd = {
+            "clangd",
+            "--query-driver=/usr/bin/**",
+        },
         init_options = {
             fallbackFlags = { "--std=c++20" },
         },
