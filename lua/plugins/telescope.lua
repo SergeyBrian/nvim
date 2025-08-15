@@ -25,6 +25,10 @@ return {
 
         telescope.setup({
             defaults = {
+                file_ignore_patterns = {
+                    "node_modules",
+                    ".git",
+                },
                 layout_config = {
                     width = 0.99,
                     height = 0.99,
@@ -61,4 +65,3 @@ return {
         telescope.load_extension("file_browser")
     end,
 }
-

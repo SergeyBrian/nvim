@@ -20,6 +20,12 @@ vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-h>', '<C-w>h', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-j>', '<C-w>j', { noremap = true, silent = true })
+
+vim.keymap.set('i', '<C-l>', '<C-o><C-w>l', { noremap = true, silent = true })
+vim.keymap.set('i', '<C-k>', '<C-o><C-w>k', { noremap = true, silent = true })
+vim.keymap.set('i', '<C-h>', '<C-o><C-w>h', { noremap = true, silent = true })
+vim.keymap.set('i', '<C-j>', '<C-o><C-w>j', { noremap = true, silent = true })
+
 vim.keymap.set("n", "<leader>J", "<cmd>cnext<CR>", { desc = "Quickfix: Next item" })
 vim.keymap.set("n", "<leader>K", "<cmd>cprev<CR>", { desc = "Quickfix: Previous item" })
 vim.keymap.set("n", "<leader>F", "<cmd>tabedit %<CR>", { desc = "Maximize current window" })

@@ -29,4 +29,5 @@ require("lazy").setup({
     require("plugins.cmp"),
     require("plugins.fzf"),
     require("plugins.dap"),
+    require("plugins.luasnip"),
 })
