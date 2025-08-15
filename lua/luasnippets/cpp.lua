@@ -11,8 +11,8 @@ local function guard_from_path()
 
     local rel  = full:gsub("^" .. esc .. "/?", "")
     rel        = rel:gsub("%.[Hh][Pp]?[Pp]$", "")
-    local mid  = rel:gsub("[/%.%-]", "_")
-    return ("H_" .. mid:upper())
+    local mid  = rel:gsub("[\\%.%-]", "_")
+    return ("H" .. mid:upper())
 end
 
 return {
