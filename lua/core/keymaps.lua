@@ -57,6 +57,17 @@ end, { desc = "Project errors quickfix list" })
 vim.keymap.set('n', '<leader><Down>', vim.diagnostic.goto_next, { noremap = true, silent = true })
 vim.keymap.set('n', '<leader><Up>', vim.diagnostic.goto_prev, { noremap = true, silent = true })
 
+vim.keymap.set("n", "gb", function()
+    vim.cmd("vsplit")
+    vim.lsp.buf.definition()
+end, { noremap = true, silent = true, desc = 'Go to definition in new pane' })
+
+vim.keymap.set('n', '<leader>gP', function()
+    vim.cmd('compiler go')
+    vim.cmd('cexpr @+')
+    vim.cmd('copen')
+end, { noremap = true, silent = true, desc = 'Quickfix from compiler output' })
+
 -- vim.keymap.set('n', '<leader>b', function()
 --     build.run_build()
 -- end, { desc = "Build project" })
