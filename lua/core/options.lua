@@ -1,5 +1,5 @@
-vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.number = false
+vim.opt.relativenumber = false
 
 -- Position of window after split
 vim.opt.splitbelow = true
@@ -35,7 +35,7 @@ vim.opt.title = true
 vim.opt.titlelen = 0
 vim.opt.titlestring = "nvim - " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
 
-vim.opt.statusline = "%f > %{%v:lua.require'nvim-navic'.get_location()%} %m %= %p%% [%{fnamemodify(getcwd(), ':t')}]"
+vim.opt.statusline = "%f > %{%v:lua.require'nvim-navic'.get_location()%} %m %= %l:%c [%{fnamemodify(getcwd(), ':t')}]"
 
 -- Extended timeout after leader key
 vim.opt.timeout = true
@@ -46,4 +46,7 @@ vim.opt.compatible = false
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "no"
+vim.diagnostic.config({
+    signs = false,
+})

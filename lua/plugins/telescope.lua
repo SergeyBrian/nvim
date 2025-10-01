@@ -11,6 +11,7 @@ return {
         { "<leader>fd", function() require("telescope.builtin").lsp_document_symbols() end,         desc = "LSP Document Symbols" },
         { "<leader>fh", function() require("telescope.builtin").help_tags() end,                    desc = "Help Tags" },
         { "<leader>fu", function() require("telescope.builtin").lsp_references() end,               desc = "LSP References" },
+        { '<leader>fr', function() require("telescope.builtin").resume() end,                       desc = 'resume last Telescope' },
 
         { "gB",         function() require("telescope.builtin").lsp_definitions() end,              desc = "LSP Definitions" },
         { "gi",         function() require("telescope.builtin").lsp_implementations() end,          desc = "LSP Implementations" },
