@@ -37,8 +37,14 @@ local servers = {
             on_attach(client, bufnr)
         end,
         init_options = {
-            fallbackFlags = { "--std=c++20" },
+            fallbackFlags = { "/std:c++23" },
         },
+    },
+    ols = {
+        on_attach = function(client, bufnr)
+            client.server_capabilities.semanticTokensProvider = nil
+            on_attach(client, bufnr)
+        end,
     },
     pyright = { on_attach = on_attach },
     lua_ls = {

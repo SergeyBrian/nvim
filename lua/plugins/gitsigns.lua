@@ -23,8 +23,8 @@ return {
                 changedelete = { text = "~" },
                 untracked    = { text = "┆" },
             },
-            signs_staged_enable          = true,
-            signcolumn                   = false, -- Toggle with `:Gitsigns toggle_signs`
+            signs_staged_enable          = false,
+            signcolumn                   = false,  -- Toggle with `:Gitsigns toggle_signs`
             numhl                        = false, -- Toggle with `:Gitsigns toggle_numhl`
             linehl                       = false, -- Toggle with `:Gitsigns toggle_linehl`
             word_diff                    = false, -- Toggle with `:Gitsigns toggle_word_diff`
@@ -32,7 +32,7 @@ return {
                 follow_files = true
             },
             auto_attach                  = true,
-            attach_to_untracked          = false,
+            attach_to_untracked          = true,
             current_line_blame           = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
             current_line_blame_opts      = {
                 virt_text = true,
