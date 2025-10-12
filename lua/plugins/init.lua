@@ -21,7 +21,7 @@ require("lazy").setup({
     require("plugins.harpoon"),
     require("plugins.gitsigns"),
     require("plugins.navic"),
-    require("plugins.kanagawa"),
+    require("plugins.yugen"),
     require("plugins.neogit"),
     require("plugins.vimtex"),
     require("plugins.lsp"),
