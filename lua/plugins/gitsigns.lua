@@ -4,6 +4,11 @@ return {
         { "<leader>gd", function() require("gitsigns").preview_hunk() end, desc = "Git Preview Hunk" },
         { "<leader>gb", function() require("gitsigns").blame_line() end,   desc = "Git Blame Line" },
         { "<leader>gz", function() require("gitsigns").reset_hunk() end,   desc = "Git Reset Hunk" },
+        { "<leader>gG", function()
+            local gs = require("gitsigns")
+            gs.toggle_linehl()
+            gs.toggle_signs()
+        end },
     },
     config = function()
         require("gitsigns").setup {
@@ -24,7 +29,7 @@ return {
                 untracked    = { text = "┆" },
             },
             signs_staged_enable          = false,
-            signcolumn                   = false,  -- Toggle with `:Gitsigns toggle_signs`
+            signcolumn                   = false, -- Toggle with `:Gitsigns toggle_signs`
             numhl                        = false, -- Toggle with `:Gitsigns toggle_numhl`
             linehl                       = false, -- Toggle with `:Gitsigns toggle_linehl`
             word_diff                    = false, -- Toggle with `:Gitsigns toggle_word_diff`
