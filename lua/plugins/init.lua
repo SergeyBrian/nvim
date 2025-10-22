@@ -29,4 +29,5 @@ require("lazy").setup({
     require("plugins.fzf"),
     require("plugins.dap"),
     require("plugins.luasnip"),
+    require("plugins.colorizer"),
 })
